@@ -8,8 +8,13 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface PIGAppDelegate : NSObject <NSApplicationDelegate>
+@interface PIGAppDelegate : NSObject <NSApplicationDelegate> {
+    NSStatusItem *appStatusItem;
+    NSOpenPanel *dialog;
+}
 
 @property (assign) IBOutlet NSWindow *window;
+@property (weak) IBOutlet NSButton *intervalChekcBox;
+@property (weak) IBOutlet NSTextField *intervalInputTextfield;
 
 @end
