@@ -15,25 +15,30 @@
 
 @synthesize checkIntervalTextField;
 @synthesize intervalChekcBox;
+@synthesize classifyButton;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
     pigSettings = [[PIGSettings alloc] init];
+    
+    [self updateDirectoryButton];
+    [self updatePeriodicalCheckbox];
 }
 
 - (void)awakeFromNib {
+    center = [NSNotificationCenter defaultCenter];
+    
     appStatusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     NSImage *appStatusItemIcon = [[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"icon_16" ofType:@"png"]];
     [appStatusItem setImage:appStatusItemIcon];
     [appStatusItem setAction:@selector(statusItemClickAction)];
+    [classifyButton setEnabled:NO];
 
     [window setReleasedWhenClosed:NO];
-    
 }
 
 - (void) statusItemClickAction {
-    NSLog(@"click,%d", [window isVisible]);
     if ([window isVisible]) {
         [window orderOut:self];
     } else {
@@ -55,17 +60,11 @@
         if(returnCode == NSOKButton){
             NSLog(@"%@", [[[targetDirectoryDialog URLs] objectAtIndex:0] path]);
             storageDirectory = [[[targetDirectoryDialog URLs] objectAtIndex:0] path];
-            NSString *openDirectoryButtonTitle;
-            if ([storageDirectory length] > 25) {
-                openDirectoryButtonTitle = [storageDirectory substringToIndex:25];
-                openDirectoryButtonTitle = [openDirectoryButtonTitle stringByAppendingString:@"..."];
-            } else {
-                openDirectoryButtonTitle = storageDirectory;
-            }
-            [openDirectoryButton setTitle:openDirectoryButtonTitle];
             if (storageDirectory != lastStorageDirectory) {
-                [pigSettings changeSettings:DESKTOP_STORAGE_DIR value:storageDirectory];
+                [pigSettings changeStorageDirectory:storageDirectory];
             }
+            
+            [self updateDirectoryButton];
         }
     }];
 }
@@ -77,11 +76,38 @@
 }
 - (IBAction)isPeriodicalCheck:(id)sender {
     if ([intervalChekcBox state] == NSOnState) {
+        [pigSettings changePeriodical:YES];
+    } else {
+        [pigSettings changePeriodical:NO];
+    }
+    [self updateIntervalTextfieldCheck];
+}
+
+- (void) updateDirectoryButton {
+    NSString *storageDirectoryString = (NSString *)[pigSettings getSetting:DESKTOP_STORAGE_DIR];
+    if ([storageDirectoryString length] > 25) {
+        storageDirectoryString = [storageDirectoryString substringToIndex:25];
+        storageDirectoryString = [storageDirectoryString stringByAppendingString:@"..."];
+    }
+    
+    [openDirectoryButton setTitle:storageDirectoryString];
+}
+
+- (void) updatePeriodicalCheckbox {
+    BOOL isPeriodical = [(NSNumber *)[pigSettings getSetting:IS_PERIODICAL] boolValue];
+    if (isPeriodical) {
+        [intervalChekcBox setState:NSOnState];
+    } else {
+        [intervalChekcBox setState:NSOffState];
+    }
+    [self updateIntervalTextfieldCheck];
+}
+
+- (void) updateIntervalTextfieldCheck {
+    if ([intervalChekcBox state] == NSOnState) {
         [checkIntervalTextField setEnabled:YES];
-        //[pigSettings changeSettings:IS_PERIODICAL value:YES];
     } else {
         [checkIntervalTextField setEnabled:NO];
-        //[pigSettings changeSettings:IS_PERIODICAL value:NO];
     }
 }
 

@@ -22,16 +22,16 @@ NSString * const DESKTOP_STORAGE_DIR = @"desktopStorageDirectory";
                                 NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0], @"desktopStorageDirectory",
                                 @604800, @"cleanTaskInterval", // for seconds of 24h * 7
                                 @0, @"lastCleanTime",          // last clean timestamp
-                                YES, @"isPeriodical",
+                                @YES, @"isPeriodical",
                                 @"value1", @"key1",           // key for testing
                                 @"value2", @"key2", nil];
     userDefautls = [NSUserDefaults standardUserDefaults];
-    NSDictionary *readMapFromLocal = [userDefautls dictionaryForKey:APP_DEFAULTS_MAP];
+    NSMutableDictionary *readMapFromLocal = [[userDefautls dictionaryForKey:APP_DEFAULTS_MAP] mutableCopy];
     if (readMapFromLocal) {
         settingsMap = readMapFromLocal;
     } else {
-        settingsMap = initialMap;//[NSDictionary dictionaryWithDictionary:initialMap];
-        [userDefautls setObject:settingsMap forKey:APP_DEFAULTS_MAP];
+        settingsMap = [initialMap mutableCopy];
+        [self flush];
     }
     
     NSLog(@"user defaults:%@", settingsMap);
@@ -55,6 +55,7 @@ NSString * const DESKTOP_STORAGE_DIR = @"desktopStorageDirectory";
 
 - (void) changePeriodical:(BOOL)value {
     [settingsMap setValue:[NSNumber numberWithBool:value] forKey:IS_PERIODICAL];
+
     [self flush];
 }
 

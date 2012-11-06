@@ -11,7 +11,7 @@
 @interface PIGSettings : NSObject {
     NSUserDefaults *userDefautls;
     
-    NSDictionary *settingsMap;
+    NSMutableDictionary *settingsMap;
 }
 extern NSString * const APP_DEFAULTS_MAP;
 

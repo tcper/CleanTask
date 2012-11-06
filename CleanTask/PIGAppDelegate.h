@@ -16,6 +16,8 @@
     NSString *storageDirectory;
     
     PIGSettings *pigSettings;
+    
+    NSNotificationCenter *center;
 }
 
 @property (assign) IBOutlet NSWindow *window;
@@ -23,5 +25,6 @@
 @property (weak) IBOutlet NSTextField *intervalInputTextfield;
 @property (weak) IBOutlet NSButton *openDirectoryButton;
 @property (weak) IBOutlet NSTextField *checkIntervalTextField;
+@property (weak) IBOutlet NSButton *classifyButton;
 
 @end
