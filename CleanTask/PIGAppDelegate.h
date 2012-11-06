@@ -7,14 +7,21 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "PIGSettings.h"
 
 @interface PIGAppDelegate : NSObject <NSApplicationDelegate> {
     NSStatusItem *appStatusItem;
-    NSOpenPanel *dialog;
+    NSOpenPanel *targetDirectoryDialog;
+    
+    NSString *storageDirectory;
+    
+    PIGSettings *pigSettings;
 }
 
 @property (assign) IBOutlet NSWindow *window;
 @property (weak) IBOutlet NSButton *intervalChekcBox;
 @property (weak) IBOutlet NSTextField *intervalInputTextfield;
+@property (weak) IBOutlet NSButton *openDirectoryButton;
+@property (weak) IBOutlet NSTextField *checkIntervalTextField;
 
 @end

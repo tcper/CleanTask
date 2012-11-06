@@ -624,7 +624,6 @@
 							<string key="NSFrame">{{405, 17}, {48, 48}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSImageCell" key="NSCell" id="642362542">
@@ -829,6 +828,30 @@
 						<reference key="destination" ref="671355000"/>
 					</object>
 					<int key="connectionID">710</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">openDirectoryButton</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="594151269"/>
+					</object>
+					<int key="connectionID">717</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">isPeriodicalCheck:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="705926834"/>
+					</object>
+					<int key="connectionID">718</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">checkIntervalTextField</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="980342706"/>
+					</object>
+					<int key="connectionID">719</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -1935,7 +1958,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">716</int>
+			<int key="maxID">719</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1950,9 +1973,34 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">PIGAppDelegate</string>
 					<string key="superclassName">NSObject</string>
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="classifyButtonAction:">id</string>
+						<string key="directorySettingButtonAction:">id</string>
+						<string key="immediateCleanAction:">id</string>
+						<string key="isPeriodicalCheck:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="classifyButtonAction:">
+							<string key="name">classifyButtonAction:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="directorySettingButtonAction:">
+							<string key="name">directorySettingButtonAction:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="immediateCleanAction:">
+							<string key="name">immediateCleanAction:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="isPeriodicalCheck:">
+							<string key="name">isPeriodicalCheck:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="intervalChekcBox">NSButton</string>
 						<string key="intervalInputTextfield">NSTextField</string>
+						<string key="openDirectoryButton">NSButton</string>
 						<string key="window">NSWindow</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
@@ -1963,6 +2011,10 @@
 						<object class="IBToOneOutletInfo" key="intervalInputTextfield">
 							<string key="name">intervalInputTextfield</string>
 							<string key="candidateClassName">NSTextField</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="openDirectoryButton">
+							<string key="name">openDirectoryButton</string>
+							<string key="candidateClassName">NSButton</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="window">
 							<string key="name">window</string>

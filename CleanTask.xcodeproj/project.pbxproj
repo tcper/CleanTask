@@ -23,6 +23,9 @@
 		E626DEB11647769300D72DCC /* icon_128.png in Resources */ = {isa = PBXBuildFile; fileRef = E626DEAB1647769300D72DCC /* icon_128.png */; };
 		E626DEB21647769300D72DCC /* icon_256.png in Resources */ = {isa = PBXBuildFile; fileRef = E626DEAC1647769300D72DCC /* icon_256.png */; };
 		E626DEB31647769300D72DCC /* icon_512.png in Resources */ = {isa = PBXBuildFile; fileRef = E626DEAD1647769300D72DCC /* icon_512.png */; };
+		E6DB735F1648B91800FF9315 /* icon_512.png in Resources */ = {isa = PBXBuildFile; fileRef = E6DB735E1648B91800FF9315 /* icon_512.png */; };
+		E6DB73611648B92B00FF9315 /* icon_256.png in Resources */ = {isa = PBXBuildFile; fileRef = E6DB73601648B92B00FF9315 /* icon_256.png */; };
+		E6DB73641648C4EC00FF9315 /* PIGSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DB73631648C4EC00FF9315 /* PIGSettings.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +65,10 @@
 		E626DEAB1647769300D72DCC /* icon_128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_128.png; path = ../../../../../Desktop/icon_128.png; sourceTree = "<group>"; };
 		E626DEAC1647769300D72DCC /* icon_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_256.png; path = ../../../../../Desktop/icon_256.png; sourceTree = "<group>"; };
 		E626DEAD1647769300D72DCC /* icon_512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_512.png; path = ../../../../../Desktop/icon_512.png; sourceTree = "<group>"; };
+		E6DB735E1648B91800FF9315 /* icon_512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_512.png; sourceTree = "<group>"; };
+		E6DB73601648B92B00FF9315 /* icon_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_256.png; sourceTree = "<group>"; };
+		E6DB73621648C4EC00FF9315 /* PIGSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIGSettings.h; sourceTree = "<group>"; };
+		E6DB73631648C4EC00FF9315 /* PIGSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIGSettings.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +95,8 @@
 		E626DE6216476FC300D72DCC = {
 			isa = PBXGroup;
 			children = (
+				E6DB73601648B92B00FF9315 /* icon_256.png */,
+				E6DB735E1648B91800FF9315 /* icon_512.png */,
 				E626DE7716476FC300D72DCC /* CleanTask */,
 				E626DE9416476FC400D72DCC /* CleanTaskTests */,
 				E626DE7016476FC300D72DCC /* Frameworks */,
@@ -133,6 +142,8 @@
 				E626DE8416476FC400D72DCC /* PIGAppDelegate.m */,
 				E626DE8616476FC400D72DCC /* MainMenu.xib */,
 				E626DE7816476FC300D72DCC /* Supporting Files */,
+				E6DB73621648C4EC00FF9315 /* PIGSettings.h */,
+				E6DB73631648C4EC00FF9315 /* PIGSettings.m */,
 			);
 			path = CleanTask;
 			sourceTree = "<group>";
@@ -262,6 +273,8 @@
 				E626DEB11647769300D72DCC /* icon_128.png in Resources */,
 				E626DEB21647769300D72DCC /* icon_256.png in Resources */,
 				E626DEB31647769300D72DCC /* icon_512.png in Resources */,
+				E6DB735F1648B91800FF9315 /* icon_512.png in Resources */,
+				E6DB73611648B92B00FF9315 /* icon_256.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +311,7 @@
 			files = (
 				E626DE7E16476FC300D72DCC /* main.m in Sources */,
 				E626DE8516476FC400D72DCC /* PIGAppDelegate.m in Sources */,
+				E6DB73641648C4EC00FF9315 /* PIGSettings.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,7 +426,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = CleanTask/CleanTask.entitlements;
-				CODE_SIGN_IDENTITY = loki;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CleanTask/CleanTask-Prefix.pch";
@@ -427,7 +440,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = CleanTask/CleanTask.entitlements;
-				CODE_SIGN_IDENTITY = loki;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CleanTask/CleanTask-Prefix.pch";
@@ -487,6 +499,7 @@
 				E626DEA116476FC400D72DCC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E626DEA216476FC400D72DCC /* Build configuration list for PBXNativeTarget "CleanTaskTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +508,7 @@
 				E626DEA416476FC400D72DCC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
