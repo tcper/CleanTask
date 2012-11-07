@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E6010FF9164A5D20005BCDCC /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = E6010FF8164A5D20005BCDCC /* icon.icns */; };
 		E626DE7216476FC300D72DCC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E626DE7116476FC300D72DCC /* Cocoa.framework */; };
 		E626DE7C16476FC300D72DCC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E626DE7A16476FC300D72DCC /* InfoPlist.strings */; };
 		E626DE7E16476FC300D72DCC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E626DE7D16476FC300D72DCC /* main.m */; };
@@ -17,15 +18,9 @@
 		E626DE9116476FC400D72DCC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E626DE7116476FC300D72DCC /* Cocoa.framework */; };
 		E626DE9916476FC400D72DCC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E626DE9716476FC400D72DCC /* InfoPlist.strings */; };
 		E626DE9C16476FC400D72DCC /* CleanTaskTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E626DE9B16476FC400D72DCC /* CleanTaskTests.m */; };
-		E626DEAE1647769300D72DCC /* icon_16.png in Resources */ = {isa = PBXBuildFile; fileRef = E626DEA81647769300D72DCC /* icon_16.png */; };
-		E626DEAF1647769300D72DCC /* icon_32.png in Resources */ = {isa = PBXBuildFile; fileRef = E626DEA91647769300D72DCC /* icon_32.png */; };
-		E626DEB01647769300D72DCC /* icon_64.png in Resources */ = {isa = PBXBuildFile; fileRef = E626DEAA1647769300D72DCC /* icon_64.png */; };
-		E626DEB11647769300D72DCC /* icon_128.png in Resources */ = {isa = PBXBuildFile; fileRef = E626DEAB1647769300D72DCC /* icon_128.png */; };
-		E626DEB21647769300D72DCC /* icon_256.png in Resources */ = {isa = PBXBuildFile; fileRef = E626DEAC1647769300D72DCC /* icon_256.png */; };
-		E626DEB31647769300D72DCC /* icon_512.png in Resources */ = {isa = PBXBuildFile; fileRef = E626DEAD1647769300D72DCC /* icon_512.png */; };
-		E6DB735F1648B91800FF9315 /* icon_512.png in Resources */ = {isa = PBXBuildFile; fileRef = E6DB735E1648B91800FF9315 /* icon_512.png */; };
-		E6DB73611648B92B00FF9315 /* icon_256.png in Resources */ = {isa = PBXBuildFile; fileRef = E6DB73601648B92B00FF9315 /* icon_256.png */; };
 		E6DB73641648C4EC00FF9315 /* PIGSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DB73631648C4EC00FF9315 /* PIGSettings.m */; };
+		E6EB2C88164A017500F80F70 /* PIGLaunchItemUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = E6EB2C87164A017500F80F70 /* PIGLaunchItemUtil.m */; };
+		E6EB2C8B164A076100F80F70 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6EB2C8A164A076100F80F70 /* ServiceManagement.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E6010FF8164A5D20005BCDCC /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
 		E626DE6D16476FC300D72DCC /* CleanTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E626DE7116476FC300D72DCC /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		E626DE7416476FC300D72DCC /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -59,16 +55,11 @@
 		E626DE9A16476FC400D72DCC /* CleanTaskTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CleanTaskTests.h; sourceTree = "<group>"; };
 		E626DE9B16476FC400D72DCC /* CleanTaskTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CleanTaskTests.m; sourceTree = "<group>"; };
 		E626DEA516476FD300D72DCC /* CleanTask.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = CleanTask.entitlements; sourceTree = "<group>"; };
-		E626DEA81647769300D72DCC /* icon_16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_16.png; path = ../../../../../Desktop/icon_16.png; sourceTree = "<group>"; };
-		E626DEA91647769300D72DCC /* icon_32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_32.png; path = ../../../../../Desktop/icon_32.png; sourceTree = "<group>"; };
-		E626DEAA1647769300D72DCC /* icon_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_64.png; path = ../../../../../Desktop/icon_64.png; sourceTree = "<group>"; };
-		E626DEAB1647769300D72DCC /* icon_128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_128.png; path = ../../../../../Desktop/icon_128.png; sourceTree = "<group>"; };
-		E626DEAC1647769300D72DCC /* icon_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_256.png; path = ../../../../../Desktop/icon_256.png; sourceTree = "<group>"; };
-		E626DEAD1647769300D72DCC /* icon_512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_512.png; path = ../../../../../Desktop/icon_512.png; sourceTree = "<group>"; };
-		E6DB735E1648B91800FF9315 /* icon_512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_512.png; sourceTree = "<group>"; };
-		E6DB73601648B92B00FF9315 /* icon_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_256.png; sourceTree = "<group>"; };
 		E6DB73621648C4EC00FF9315 /* PIGSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIGSettings.h; sourceTree = "<group>"; };
 		E6DB73631648C4EC00FF9315 /* PIGSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIGSettings.m; sourceTree = "<group>"; };
+		E6EB2C86164A017500F80F70 /* PIGLaunchItemUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIGLaunchItemUtil.h; sourceTree = "<group>"; };
+		E6EB2C87164A017500F80F70 /* PIGLaunchItemUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIGLaunchItemUtil.m; sourceTree = "<group>"; };
+		E6EB2C8A164A076100F80F70 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6EB2C8B164A076100F80F70 /* ServiceManagement.framework in Frameworks */,
 				E626DE7216476FC300D72DCC /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -95,8 +87,7 @@
 		E626DE6216476FC300D72DCC = {
 			isa = PBXGroup;
 			children = (
-				E6DB73601648B92B00FF9315 /* icon_256.png */,
-				E6DB735E1648B91800FF9315 /* icon_512.png */,
+				E6010FF8164A5D20005BCDCC /* icon.icns */,
 				E626DE7716476FC300D72DCC /* CleanTask */,
 				E626DE9416476FC400D72DCC /* CleanTaskTests */,
 				E626DE7016476FC300D72DCC /* Frameworks */,
@@ -116,6 +107,7 @@
 		E626DE7016476FC300D72DCC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E6EB2C8A164A076100F80F70 /* ServiceManagement.framework */,
 				E626DE7116476FC300D72DCC /* Cocoa.framework */,
 				E626DE8F16476FC400D72DCC /* SenTestingKit.framework */,
 				E626DE7316476FC300D72DCC /* Other Frameworks */,
@@ -136,14 +128,13 @@
 		E626DE7716476FC300D72DCC /* CleanTask */ = {
 			isa = PBXGroup;
 			children = (
-				E626DEA71647765800D72DCC /* icon */,
+				E6EB2C8D164A336100F80F70 /* launch */,
+				E6EB2C8C164A334500F80F70 /* settings */,
 				E626DEA516476FD300D72DCC /* CleanTask.entitlements */,
 				E626DE8316476FC300D72DCC /* PIGAppDelegate.h */,
 				E626DE8416476FC400D72DCC /* PIGAppDelegate.m */,
 				E626DE8616476FC400D72DCC /* MainMenu.xib */,
 				E626DE7816476FC300D72DCC /* Supporting Files */,
-				E6DB73621648C4EC00FF9315 /* PIGSettings.h */,
-				E6DB73631648C4EC00FF9315 /* PIGSettings.m */,
 			);
 			path = CleanTask;
 			sourceTree = "<group>";
@@ -179,17 +170,22 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		E626DEA71647765800D72DCC /* icon */ = {
+		E6EB2C8C164A334500F80F70 /* settings */ = {
 			isa = PBXGroup;
 			children = (
-				E626DEA81647769300D72DCC /* icon_16.png */,
-				E626DEA91647769300D72DCC /* icon_32.png */,
-				E626DEAA1647769300D72DCC /* icon_64.png */,
-				E626DEAB1647769300D72DCC /* icon_128.png */,
-				E626DEAC1647769300D72DCC /* icon_256.png */,
-				E626DEAD1647769300D72DCC /* icon_512.png */,
+				E6DB73621648C4EC00FF9315 /* PIGSettings.h */,
+				E6DB73631648C4EC00FF9315 /* PIGSettings.m */,
 			);
-			name = icon;
+			name = settings;
+			sourceTree = "<group>";
+		};
+		E6EB2C8D164A336100F80F70 /* launch */ = {
+			isa = PBXGroup;
+			children = (
+				E6EB2C86164A017500F80F70 /* PIGLaunchItemUtil.h */,
+				E6EB2C87164A017500F80F70 /* PIGLaunchItemUtil.m */,
+			);
+			name = launch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,14 +263,7 @@
 				E626DE7C16476FC300D72DCC /* InfoPlist.strings in Resources */,
 				E626DE8216476FC300D72DCC /* Credits.rtf in Resources */,
 				E626DE8816476FC400D72DCC /* MainMenu.xib in Resources */,
-				E626DEAE1647769300D72DCC /* icon_16.png in Resources */,
-				E626DEAF1647769300D72DCC /* icon_32.png in Resources */,
-				E626DEB01647769300D72DCC /* icon_64.png in Resources */,
-				E626DEB11647769300D72DCC /* icon_128.png in Resources */,
-				E626DEB21647769300D72DCC /* icon_256.png in Resources */,
-				E626DEB31647769300D72DCC /* icon_512.png in Resources */,
-				E6DB735F1648B91800FF9315 /* icon_512.png in Resources */,
-				E6DB73611648B92B00FF9315 /* icon_256.png in Resources */,
+				E6010FF9164A5D20005BCDCC /* icon.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +301,7 @@
 				E626DE7E16476FC300D72DCC /* main.m in Sources */,
 				E626DE8516476FC400D72DCC /* PIGAppDelegate.m in Sources */,
 				E6DB73641648C4EC00FF9315 /* PIGSettings.m in Sources */,
+				E6EB2C88164A017500F80F70 /* PIGLaunchItemUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +369,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = loki;
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -395,6 +386,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -409,6 +401,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = loki;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -418,6 +411,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -426,6 +420,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = CleanTask/CleanTask.entitlements;
+				CODE_SIGN_IDENTITY = loki;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CleanTask/CleanTask-Prefix.pch";
@@ -440,6 +435,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = CleanTask/CleanTask.entitlements;
+				CODE_SIGN_IDENTITY = loki;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CleanTask/CleanTask-Prefix.pch";

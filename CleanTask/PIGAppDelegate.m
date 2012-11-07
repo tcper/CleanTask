@@ -7,6 +7,7 @@
 //
 
 #import "PIGAppDelegate.h"
+#import "PIGLaunchItemUtil.h"
 
 @implementation PIGAppDelegate
 
@@ -30,7 +31,7 @@
     center = [NSNotificationCenter defaultCenter];
     
     appStatusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
-    NSImage *appStatusItemIcon = [[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"icon_16" ofType:@"png"]];
+    NSImage *appStatusItemIcon = [[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"icon_16x16" ofType:@"png"]];
     [appStatusItem setImage:appStatusItemIcon];
     [appStatusItem setAction:@selector(statusItemClickAction)];
     [classifyButton setEnabled:NO];
@@ -81,6 +82,14 @@
         [pigSettings changePeriodical:NO];
     }
     [self updateIntervalTextfieldCheck];
+}
+- (IBAction)loginLaunchAction:(id)sender {
+    NSButton *button = (NSButton *)sender;
+    if ([button state] == NSOnState) {
+        [PIGLaunchItemUtil launchAtLogin:YES];
+    } else {
+        [PIGLaunchItemUtil launchAtLogin:NO];
+    }
 }
 
 - (void) updateDirectoryButton {
