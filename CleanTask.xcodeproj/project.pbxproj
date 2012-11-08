@@ -18,6 +18,7 @@
 		E626DE9116476FC400D72DCC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E626DE7116476FC300D72DCC /* Cocoa.framework */; };
 		E626DE9916476FC400D72DCC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E626DE9716476FC400D72DCC /* InfoPlist.strings */; };
 		E626DE9C16476FC400D72DCC /* CleanTaskTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E626DE9B16476FC400D72DCC /* CleanTaskTests.m */; };
+		E6507591164BC6D50001511C /* CleanTaskHelper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = E650758C164BC6170001511C /* CleanTaskHelper.app */; };
 		E6DB73641648C4EC00FF9315 /* PIGSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DB73631648C4EC00FF9315 /* PIGSettings.m */; };
 		E6EB2C88164A017500F80F70 /* PIGLaunchItemUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = E6EB2C87164A017500F80F70 /* PIGLaunchItemUtil.m */; };
 		E6EB2C8B164A076100F80F70 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6EB2C8A164A076100F80F70 /* ServiceManagement.framework */; };
@@ -31,7 +32,34 @@
 			remoteGlobalIDString = E626DE6C16476FC300D72DCC;
 			remoteInfo = CleanTask;
 		};
+		E650758B164BC6170001511C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E6507586164BC6160001511C /* CleanTaskHelper.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E650754E164BC6160001511C;
+			remoteInfo = CleanTaskHelper;
+		};
+		E650758D164BC6170001511C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E6507586164BC6160001511C /* CleanTaskHelper.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E650756F164BC6160001511C;
+			remoteInfo = CleanTaskHelperTests;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E6507590164BC6A70001511C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				E6507591164BC6D50001511C /* CleanTaskHelper.app in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		E6010FF8164A5D20005BCDCC /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
@@ -55,6 +83,7 @@
 		E626DE9A16476FC400D72DCC /* CleanTaskTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CleanTaskTests.h; sourceTree = "<group>"; };
 		E626DE9B16476FC400D72DCC /* CleanTaskTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CleanTaskTests.m; sourceTree = "<group>"; };
 		E626DEA516476FD300D72DCC /* CleanTask.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = CleanTask.entitlements; sourceTree = "<group>"; };
+		E6507586164BC6160001511C /* CleanTaskHelper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CleanTaskHelper.xcodeproj; path = CleanTaskHelper/CleanTaskHelper.xcodeproj; sourceTree = "<group>"; };
 		E6DB73621648C4EC00FF9315 /* PIGSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIGSettings.h; sourceTree = "<group>"; };
 		E6DB73631648C4EC00FF9315 /* PIGSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIGSettings.m; sourceTree = "<group>"; };
 		E6EB2C86164A017500F80F70 /* PIGLaunchItemUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIGLaunchItemUtil.h; sourceTree = "<group>"; };
@@ -87,6 +116,7 @@
 		E626DE6216476FC300D72DCC = {
 			isa = PBXGroup;
 			children = (
+				E6507586164BC6160001511C /* CleanTaskHelper.xcodeproj */,
 				E6010FF8164A5D20005BCDCC /* icon.icns */,
 				E626DE7716476FC300D72DCC /* CleanTask */,
 				E626DE9416476FC400D72DCC /* CleanTaskTests */,
@@ -170,6 +200,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		E6507587164BC6160001511C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E650758C164BC6170001511C /* CleanTaskHelper.app */,
+				E650758E164BC6170001511C /* CleanTaskHelperTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		E6EB2C8C164A334500F80F70 /* settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +237,7 @@
 				E626DE6916476FC300D72DCC /* Sources */,
 				E626DE6A16476FC300D72DCC /* Frameworks */,
 				E626DE6B16476FC300D72DCC /* Resources */,
+				E6507590164BC6A70001511C /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -247,6 +287,12 @@
 			mainGroup = E626DE6216476FC300D72DCC;
 			productRefGroup = E626DE6E16476FC300D72DCC /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = E6507587164BC6160001511C /* Products */;
+					ProjectRef = E6507586164BC6160001511C /* CleanTaskHelper.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				E626DE6C16476FC300D72DCC /* CleanTask */,
@@ -254,6 +300,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		E650758C164BC6170001511C /* CleanTaskHelper.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = CleanTaskHelper.app;
+			remoteRef = E650758B164BC6170001511C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E650758E164BC6170001511C /* CleanTaskHelperTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = CleanTaskHelperTests.octest;
+			remoteRef = E650758D164BC6170001511C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		E626DE6B16476FC300D72DCC /* Resources */ = {
@@ -437,6 +500,7 @@
 				CODE_SIGN_ENTITLEMENTS = CleanTask/CleanTask.entitlements;
 				CODE_SIGN_IDENTITY = loki;
 				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CleanTask/CleanTask-Prefix.pch";
 				INFOPLIST_FILE = "CleanTask/CleanTask-Info.plist";

@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'CleanTaskHelper' target in the 'CleanTaskHelper' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif

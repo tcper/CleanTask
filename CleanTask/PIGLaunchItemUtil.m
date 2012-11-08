@@ -10,21 +10,21 @@
 
 @implementation PIGLaunchItemUtil
 
-NSString * const APP_IDENTIFIER = @"org.pigtracer.lab.CleanTask";
+NSString * const APP_IDENTIFIER = @"org.pigtracer.lab.CleanTaskHelper";
 
 + (void) launchAtLogin:(BOOL)value {
     NSBundle *bundle = [NSBundle mainBundle];
     NSLog(@"bundle:%@", [bundle bundleIdentifier]);
-    CFStringRef identifier = (__bridge CFStringRef)[bundle bundleIdentifier];//(__bridge CFStringRef) APP_IDENTIFIER;
+    //CFStringRef identifier = (__bridge CFStringRef)[bundle bundleIdentifier];//(__bridge CFStringRef) APP_IDENTIFIER;
     
     if (value) {
-        if (!SMLoginItemSetEnabled(identifier, true)) {
+        if (!SMLoginItemSetEnabled((__bridge CFStringRef)(APP_IDENTIFIER), true)) {
             NSLog(@"login failed");
         } else {
             NSLog(@"login");
         }
     } else {
-        SMLoginItemSetEnabled(identifier, false);
+        SMLoginItemSetEnabled((__bridge CFStringRef)(APP_IDENTIFIER), false);
     }
 }
 
