@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E61521F7164CF45800AB4285 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E61521F6164CF45800AB4285 /* MainMenu.xib */; };
 		E6507553164BC6160001511C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6507552164BC6160001511C /* Cocoa.framework */; };
 		E650755D164BC6160001511C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E650755B164BC6160001511C /* InfoPlist.strings */; };
 		E650755F164BC6160001511C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E650755E164BC6160001511C /* main.m */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E61521F6164CF45800AB4285 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		E650754E164BC6160001511C /* CleanTaskHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanTaskHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6507552164BC6160001511C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		E6507555164BC6160001511C /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -117,6 +119,7 @@
 				E6507564164BC6160001511C /* PIGAppDelegate.h */,
 				E6507565164BC6160001511C /* PIGAppDelegate.m */,
 				E6507559164BC6160001511C /* Supporting Files */,
+				E61521F6164CF45800AB4285 /* MainMenu.xib */,
 			);
 			path = CleanTaskHelper;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 			files = (
 				E650755D164BC6160001511C /* InfoPlist.strings in Resources */,
 				E6507563164BC6160001511C /* Credits.rtf in Resources */,
+				E61521F7164CF45800AB4285 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,6 +449,7 @@
 				E6507582164BC6160001511C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E6507583164BC6160001511C /* Build configuration list for PBXNativeTarget "CleanTaskHelperTests" */ = {
 			isa = XCConfigurationList;
@@ -453,6 +458,7 @@
 				E6507585164BC6160001511C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

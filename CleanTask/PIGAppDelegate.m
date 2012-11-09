@@ -25,6 +25,12 @@
     
     [self updateDirectoryButton];
     [self updatePeriodicalCheckbox];
+    
+    if ([PIGLaunchItemUtil checkIsAddedLoginItem]) {
+        NSLog(@"launch");
+    } else {
+        NSLog(@"launch no");
+    }
 }
 
 - (void)awakeFromNib {

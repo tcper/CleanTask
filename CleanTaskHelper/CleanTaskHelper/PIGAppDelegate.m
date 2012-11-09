@@ -14,7 +14,6 @@ NSString * const APP_IDENTIFIER = @"org.pigtracer.lab.CleanTask";
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Insert code here to initialize your application
     BOOL alreadyRunning = NO;
     NSArray *running = [[NSWorkspace sharedWorkspace] runningApplications];
     for (NSRunningApplication *app in running) {
@@ -31,7 +30,7 @@ NSString * const APP_IDENTIFIER = @"org.pigtracer.lab.CleanTask";
         [pathComponents removeLastObject];
         [pathComponents removeLastObject];
         [pathComponents addObject:@"MacOS"];
-        [pathComponents addObject:@"LaunchAtLoginApp"];
+        [pathComponents addObject:@"CleanTask"];
         NSString *newPath = [NSString pathWithComponents:pathComponents];
         [[NSWorkspace sharedWorkspace] launchApplication:newPath];
     }

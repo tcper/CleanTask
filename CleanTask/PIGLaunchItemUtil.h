@@ -13,4 +13,5 @@
 extern NSString * const APP_IDENTIFIER;
 
 + (void) launchAtLogin: (BOOL) value;
++ (BOOL) checkIsAddedLoginItem;
 @end
