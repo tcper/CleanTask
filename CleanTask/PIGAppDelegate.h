@@ -22,9 +22,10 @@
 
 @property (assign) IBOutlet NSWindow *window;
 @property (weak) IBOutlet NSButton *intervalChekcBox;
-@property (weak) IBOutlet NSTextField *intervalInputTextfield;
+
 @property (weak) IBOutlet NSButton *openDirectoryButton;
-@property (weak) IBOutlet NSTextField *checkIntervalTextField;
+
 @property (weak) IBOutlet NSButton *classifyButton;
+@property (weak) IBOutlet NSComboBox *intervalCombo;
 
 @end

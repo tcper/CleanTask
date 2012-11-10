@@ -19,6 +19,7 @@ extern NSString * const DESKTOP_STORAGE_DIR;
 extern NSString * const CLEAN_TASK_INTERVAL;
 extern NSString * const LAST_CLEAN_TIME;
 extern NSString * const IS_PERIODICAL;
+extern NSString * const INTERVAL_TYPE;
 
 - (NSObject *) getSetting:(NSString *)key;
 
@@ -26,5 +27,6 @@ extern NSString * const IS_PERIODICAL;
 - (void) changePeriodical:(BOOL)value;
 - (void) changeStorageDirectory:(NSString *)value;
 - (void) changeCleanInterval:(int)value;
+- (void) changeIntervalType:(NSNumber*) value;
 
 @end

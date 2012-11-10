@@ -14,9 +14,9 @@
 @synthesize window;
 @synthesize openDirectoryButton;
 
-@synthesize checkIntervalTextField;
 @synthesize intervalChekcBox;
 @synthesize classifyButton;
+@synthesize intervalCombo;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
@@ -25,12 +25,15 @@
     
     [self updateDirectoryButton];
     [self updatePeriodicalCheckbox];
+    [self updateComboBox];
     
     if ([PIGLaunchItemUtil checkIsAddedLoginItem]) {
         NSLog(@"launch");
     } else {
         NSLog(@"launch no");
     }
+    
+    [center addObserver:self selector:@selector(intervalComboObserver:) name:NSComboBoxSelectionDidChangeNotification object:nil];
 }
 
 - (void)awakeFromNib {
@@ -98,6 +101,11 @@
     }
 }
 
+- (void) intervalComboObserver:(NSNotification *) notification {
+    NSLog(@"%lu", [intervalCombo indexOfSelectedItem]);
+    [pigSettings changeIntervalType:[NSNumber numberWithInteger:[intervalCombo indexOfSelectedItem]]];
+}
+
 - (void) updateDirectoryButton {
     NSString *storageDirectoryString = (NSString *)[pigSettings getSetting:DESKTOP_STORAGE_DIR];
     if ([storageDirectoryString length] > 25) {
@@ -106,6 +114,11 @@
     }
     
     [openDirectoryButton setTitle:storageDirectoryString];
+}
+
+- (void) updateComboBox {
+    NSNumber *type = (NSNumber *)[pigSettings getSetting:INTERVAL_TYPE];
+    [intervalCombo selectItemAtIndex:[type integerValue]];
 }
 
 - (void) updatePeriodicalCheckbox {
@@ -120,9 +133,9 @@
 
 - (void) updateIntervalTextfieldCheck {
     if ([intervalChekcBox state] == NSOnState) {
-        [checkIntervalTextField setEnabled:YES];
+        [intervalCombo setEnabled:YES];
     } else {
-        [checkIntervalTextField setEnabled:NO];
+        [intervalCombo setEnabled:NO];
     }
 }
 
