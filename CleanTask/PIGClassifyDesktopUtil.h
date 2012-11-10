@@ -7,7 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PIGSettings.h"
 
-@interface PIGClassifyDesktopUtil : NSObject
+@interface PIGClassifyDesktopUtil : NSObject {
+    PIGSettings *settings;
+    NSFileManager *manager;
+}
+
+- (void) initTargetDirectory:(PIGSettings *)value;
+- (void) performPackage;
 
 @end
