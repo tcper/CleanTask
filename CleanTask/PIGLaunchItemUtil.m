@@ -33,13 +33,12 @@ NSString * const APP_IDENTIFIER = @"org.pigtracer.lab.CleanTaskHelper";
     
     CFArrayRef cfJobDicts = SMCopyAllJobDictionaries(kSMDomainSystemLaunchd);
     NSArray *jobDicts = (__bridge NSArray *)(cfJobDicts);
-    NSLog(@"%lu", [jobDicts count]);
     if (!jobDicts || [jobDicts count] <= 0) {
         return NO;
     }
     
     for (NSDictionary *job in jobDicts) {
-        NSLog(@"%@", [job objectForKey:@"Label"]);
+        //NSLog(@"%@", [job objectForKey:@"Label"]);
         if ([APP_IDENTIFIER isEqualToString:[job objectForKey:@"Label"]]) {
             isEnabled = [[job objectForKey:@"OnDemand"] booleanValue];
             break;

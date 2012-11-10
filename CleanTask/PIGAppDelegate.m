@@ -22,6 +22,8 @@
     // Insert code here to initialize your application
     pigSettings = [[PIGSettings alloc] init];
     packageUtil = [[PIGClassifyDesktopUtil alloc] init];
+    [packageUtil initTargetDirectory:pigSettings];
+    [packageUtil performPackage];
     
     [self updateDirectoryButton];
     [self updatePeriodicalCheckbox];

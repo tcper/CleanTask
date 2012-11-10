@@ -15,6 +15,11 @@
     NSFileManager *manager;
     
     NSObject *settingSource;
+    
+    NSString *homePath;
+    NSString *desktopPath;
+    
+    NSString *moveToDirectory;
 }
 
 - (void) initTargetDirectory:(PIGSettings *)value;
