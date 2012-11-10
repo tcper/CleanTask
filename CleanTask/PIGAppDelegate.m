@@ -7,7 +7,6 @@
 //
 
 #import "PIGAppDelegate.h"
-#import "PIGLaunchItemUtil.h"
 
 @implementation PIGAppDelegate
 
@@ -22,6 +21,7 @@
 {
     // Insert code here to initialize your application
     pigSettings = [[PIGSettings alloc] init];
+    packageUtil = [[PIGClassifyDesktopUtil alloc] init];
     
     [self updateDirectoryButton];
     [self updatePeriodicalCheckbox];

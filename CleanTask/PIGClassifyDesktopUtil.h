@@ -9,11 +9,12 @@
 #import <Foundation/Foundation.h>
 #import <sys/xattr.h>
 #import "PIGSettings.h"
-#import "JSONKit.h"
 
 @interface PIGClassifyDesktopUtil : NSObject {
     PIGSettings *settings;
     NSFileManager *manager;
+    
+    NSObject *settingSource;
 }
 
 - (void) initTargetDirectory:(PIGSettings *)value;

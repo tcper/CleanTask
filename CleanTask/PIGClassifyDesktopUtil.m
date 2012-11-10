@@ -10,8 +10,13 @@
 
 @implementation PIGClassifyDesktopUtil
 
+NSString const *ALL_FILES = @"all";
+NSString const *DIR_FILES = @"dir";
+
 - (id) init {
     manager = [NSFileManager defaultManager];
+    NSData *sourceData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"FileSettings" ofType:@"json"]];
+    settingSource = [NSJSONSerialization JSONObjectWithData:sourceData options:NSJSONReadingAllowFragments error:nil];
     return self;
 }
 
@@ -27,7 +32,20 @@
 }
 
 - (void) performPackage {
-    
+    NSArray *typeList = [self parseFileSettings:settingSource];
+    for (NSObject *typeBundle in typeList) {
+        NSArray *extList = [typeBundle valueForKey:@"extensions"];
+        for (NSString *ext in extList) {
+            NSLog(@"%@", ext);
+        }
+    }
+}
+
+
+
+- (NSArray *) parseFileSettings:(NSObject *) source {
+    NSArray *typeList = (NSArray *) [source valueForKey:@"root"];
+    return typeList;
 }
 
 @end

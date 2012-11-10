@@ -20,7 +20,7 @@
 		E626DE9C16476FC400D72DCC /* CleanTaskTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E626DE9B16476FC400D72DCC /* CleanTaskTests.m */; };
 		E6507591164BC6D50001511C /* CleanTaskHelper.app in Copy Files */ = {isa = PBXBuildFile; fileRef = E650758C164BC6170001511C /* CleanTaskHelper.app */; };
 		E686B53B164E603800F6E935 /* PIGClassifyDesktopUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = E686B53A164E603800F6E935 /* PIGClassifyDesktopUtil.m */; };
-		E686B53E164E694500F6E935 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E686B53D164E694500F6E935 /* JSONKit.m */; };
+		E686B540164E69AD00F6E935 /* FileSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = E686B53F164E69AD00F6E935 /* FileSettings.json */; };
 		E6DB73641648C4EC00FF9315 /* PIGSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DB73631648C4EC00FF9315 /* PIGSettings.m */; };
 		E6EB2C88164A017500F80F70 /* PIGLaunchItemUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = E6EB2C87164A017500F80F70 /* PIGLaunchItemUtil.m */; };
 		E6EB2C8B164A076100F80F70 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6EB2C8A164A076100F80F70 /* ServiceManagement.framework */; };
@@ -89,8 +89,7 @@
 		E6507586164BC6160001511C /* CleanTaskHelper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CleanTaskHelper.xcodeproj; path = CleanTaskHelper/CleanTaskHelper.xcodeproj; sourceTree = "<group>"; };
 		E686B539164E603800F6E935 /* PIGClassifyDesktopUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIGClassifyDesktopUtil.h; sourceTree = "<group>"; };
 		E686B53A164E603800F6E935 /* PIGClassifyDesktopUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIGClassifyDesktopUtil.m; sourceTree = "<group>"; };
-		E686B53C164E694500F6E935 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
-		E686B53D164E694500F6E935 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		E686B53F164E69AD00F6E935 /* FileSettings.json */ = {isa = PBXFileReference; explicitFileType = text.json; fileEncoding = 4; path = FileSettings.json; sourceTree = "<group>"; };
 		E6DB73621648C4EC00FF9315 /* PIGSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIGSettings.h; sourceTree = "<group>"; };
 		E6DB73631648C4EC00FF9315 /* PIGSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIGSettings.m; sourceTree = "<group>"; };
 		E6EB2C86164A017500F80F70 /* PIGLaunchItemUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIGLaunchItemUtil.h; sourceTree = "<group>"; };
@@ -220,10 +219,9 @@
 		E686B538164E600500F6E935 /* functionality */ = {
 			isa = PBXGroup;
 			children = (
-				E686B53C164E694500F6E935 /* JSONKit.h */,
-				E686B53D164E694500F6E935 /* JSONKit.m */,
 				E686B539164E603800F6E935 /* PIGClassifyDesktopUtil.h */,
 				E686B53A164E603800F6E935 /* PIGClassifyDesktopUtil.m */,
+				E686B53F164E69AD00F6E935 /* FileSettings.json */,
 			);
 			name = functionality;
 			sourceTree = "<group>";
@@ -346,6 +344,7 @@
 				E626DE8216476FC300D72DCC /* Credits.rtf in Resources */,
 				E626DE8816476FC400D72DCC /* MainMenu.xib in Resources */,
 				E6010FF9164A5D20005BCDCC /* icon.icns in Resources */,
+				E686B540164E69AD00F6E935 /* FileSettings.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,7 +384,6 @@
 				E6DB73641648C4EC00FF9315 /* PIGSettings.m in Sources */,
 				E6EB2C88164A017500F80F70 /* PIGLaunchItemUtil.m in Sources */,
 				E686B53B164E603800F6E935 /* PIGClassifyDesktopUtil.m in Sources */,
-				E686B53E164E694500F6E935 /* JSONKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 #import "PIGSettings.h"
+#import "PIGClassifyDesktopUtil.h"
+#import "PIGLaunchItemUtil.h"
 
 @interface PIGAppDelegate : NSObject <NSApplicationDelegate> {
     NSStatusItem *appStatusItem;
@@ -16,6 +18,7 @@
     NSString *storageDirectory;
     
     PIGSettings *pigSettings;
+    PIGClassifyDesktopUtil *packageUtil;
     
     NSNotificationCenter *center;
 }
