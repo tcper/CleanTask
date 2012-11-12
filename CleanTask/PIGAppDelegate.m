@@ -83,6 +83,7 @@
 - (IBAction)classifyButtonAction:(id)sender {
 }
 - (IBAction)immediateCleanAction:(id)sender {
+    [packageUtil performPackage];
     //clean function
     [pigSettings updateCleanTime];
 }

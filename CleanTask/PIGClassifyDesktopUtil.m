@@ -35,7 +35,7 @@ NSString const *DIR_CREATOR = @"loki";
 
 - (void) performPackage {
     [self checkMoveToDirectoryBeforePerform];
-    return;
+    
     NSArray *desktopFilesList = [manager contentsOfDirectoryAtPath:desktopPath error:nil];
     for (NSString *fileName in desktopFilesList) {
         [self handleSingleItem:fileName];
@@ -43,14 +43,8 @@ NSString const *DIR_CREATOR = @"loki";
 }
 
 - (void) checkMoveToDirectoryBeforePerform {
-    NSDate *today = [[NSDate alloc] init];
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setTimeStyle:NSDateFormatterNoStyle];
-    [formatter setDateStyle:NSDateFormatterMediumStyle];
-    NSString *dateDirectory = [formatter stringFromDate:today];
-    
-    NSString *storageBase = [(NSString *) [settings getSetting:DESKTOP_STORAGE_DIR] stringByAppendingString:@"/Desktops/"];
-    
+    NSString *storageBase = [(NSString *) [settings getSetting:DESKTOP_STORAGE_DIR] stringByAppendingString:@"/"];
+    NSLog(@"url:%@", storageBase);
     // check base dir;
     if ([manager fileExistsAtPath:storageBase]) {
         NSLog(@"do nothing");
@@ -58,12 +52,27 @@ NSString const *DIR_CREATOR = @"loki";
         [manager createDirectoryAtPath:storageBase withIntermediateDirectories:NO attributes:nil error:NULL];
     }
     //check date dir;
-    moveToDirectory = [storageBase stringByAppendingString:dateDirectory];
+    [self checkOrCreateMoveToDirectory:storageBase createPathLevel:0];
+}
+
+- (void) checkOrCreateMoveToDirectory:(NSString *) path createPathLevel:(int) level {
+    NSDate *today = [[NSDate alloc] init];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setTimeStyle:NSDateFormatterNoStyle];
+    [formatter setDateStyle:NSDateFormatterMediumStyle];
+    NSString *dateDirectory = [formatter stringFromDate:today];
+    
+    if (level == 0) {
+        moveToDirectory = [path stringByAppendingString:dateDirectory];
+    } else {
+        moveToDirectory = [path stringByAppendingFormat:@"%@-%u", dateDirectory, level];
+    }
+    
+    NSLog(@"moveTo:%@", moveToDirectory);
     
     if ([manager fileExistsAtPath:moveToDirectory]) {
-        NSLog(@"PIGClassifyDesktopUtil storage dir exists, do nothing");
+        [self checkOrCreateMoveToDirectory:path createPathLevel:level+1];
     } else {
-        NSLog(@"create");
         [manager createDirectoryAtPath:moveToDirectory withIntermediateDirectories:NO attributes:nil error:NULL];
         const char *cMoveToDirectory = [moveToDirectory UTF8String];
         setxattr(cMoveToDirectory, "creator", "loki", 4, 0, 0);
@@ -80,12 +89,12 @@ NSString const *DIR_CREATOR = @"loki";
     NSString *fullPathFileName = [[desktopPath stringByAppendingString:@"/"] stringByAppendingString:fileName];
 
     [manager fileExistsAtPath:fullPathFileName isDirectory:&isDir];
-    /*
+    
     if (isDir) {
         [self handleSingleDir:fileName];
     } else {
         [self handleSingleFile:fileName];
-    }*/
+    }
 }
 
 - (BOOL) checkIgnoreFile:(NSString *)fileName {
@@ -105,8 +114,8 @@ NSString const *DIR_CREATOR = @"loki";
     }
     
     NSString *moveToFullPath = [[moveToDirectory stringByAppendingString:@"/"] stringByAppendingString:path];
-    
-    [manager moveItemAtPath:fullPath toPath:moveToFullPath error:nil];
+    NSLog(@"handleSingleDir:%@", moveToFullPath);
+    //[manager moveItemAtPath:fullPath toPath:moveToFullPath error:nil];
 }
 
 - (BOOL) checkDirectoryCreator:(NSString *) path {
@@ -119,10 +128,10 @@ NSString const *DIR_CREATOR = @"loki";
 }
 
 - (void) handleSingleFile:(NSString *)file {
-    NSLog(@"handle file: %@", file);
+    NSString *fileFullPath = [desktopPath stringByAppendingFormat:@"/%@", file];
     
     NSArray *fileSplit = [file componentsSeparatedByString:@"."];
-    NSString *fileExt = (NSString *) [fileSplit objectAtIndex:1];
+    NSString *fileExt = (NSString *) [fileSplit objectAtIndex:[fileSplit count] - 1];
     
     NSArray *typeList = [self parseFileSettings:settingSource];
     for (NSObject *typeBundle in typeList) {
@@ -131,14 +140,29 @@ NSString const *DIR_CREATOR = @"loki";
         NSArray *extList = [typeBundle valueForKey:@"extensions"];
         
         for (NSString *ext in extList) {
-            //NSLog(@"%@", ext);
-            if ([ext compare:fileExt]) {
+
+            if (![ext compare:fileExt]) {
                 //move file to target dir than return;
+                NSString *moveToFullPath = [moveToDirectory stringByAppendingFormat:@"/%@", typeDocName];
+                NSLog(@"filename:%@", fileFullPath);
+                NSLog(@"handleSingleFile:%@", moveToFullPath);
+                //[self moveFileToPath:fileFullPath moveToPath:moveToFullPath];
+                return;
             }
         }
     }
     
     // mov file to other doc;
+    NSString *otherFullPath = [moveToDirectory stringByAppendingFormat:@"/%@", @"Other Files"];
+    //[self moveFileToPath:fileFullPath moveToPath:otherFullPath];
+}
+
+- (void) moveFileToPath:(NSString *) fileFullPath moveToPath:(NSString *) moveToFullPath {
+    if (![manager fileExistsAtPath:moveToFullPath]) {
+        [manager createDirectoryAtPath:moveToFullPath withIntermediateDirectories:NO attributes:nil error:NULL];
+    }
+    
+    [manager moveItemAtPath:fileFullPath toPath:moveToFullPath error:nil];
 }
 
 - (NSArray *) parseFileSettings:(NSObject *) source {
