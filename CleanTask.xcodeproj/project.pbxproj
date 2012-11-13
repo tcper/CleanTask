@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E6010FF9164A5D20005BCDCC /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = E6010FF8164A5D20005BCDCC /* icon.icns */; };
+		E615AE8D1652300300F4C101 /* PIGUUID.m in Sources */ = {isa = PBXBuildFile; fileRef = E615AE8C1652300300F4C101 /* PIGUUID.m */; };
 		E6191EE21650ED5600950C37 /* icon_16x16.png in Resources */ = {isa = PBXBuildFile; fileRef = E6191EE01650ED5600950C37 /* icon_16x16.png */; };
 		E6191EE31650ED5600950C37 /* icon_16x16@2.png in Resources */ = {isa = PBXBuildFile; fileRef = E6191EE11650ED5600950C37 /* icon_16x16@2.png */; };
 		E626DE7216476FC300D72DCC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E626DE7116476FC300D72DCC /* Cocoa.framework */; };
@@ -20,7 +21,6 @@
 		E626DE9116476FC400D72DCC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E626DE7116476FC300D72DCC /* Cocoa.framework */; };
 		E626DE9916476FC400D72DCC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E626DE9716476FC400D72DCC /* InfoPlist.strings */; };
 		E626DE9C16476FC400D72DCC /* CleanTaskTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E626DE9B16476FC400D72DCC /* CleanTaskTests.m */; };
-		E6507591164BC6D50001511C /* CleanTaskHelper.app in Copy Files */ = {isa = PBXBuildFile; fileRef = E650758C164BC6170001511C /* CleanTaskHelper.app */; };
 		E686B53B164E603800F6E935 /* PIGClassifyDesktopUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = E686B53A164E603800F6E935 /* PIGClassifyDesktopUtil.m */; };
 		E686B540164E69AD00F6E935 /* FileSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = E686B53F164E69AD00F6E935 /* FileSettings.json */; };
 		E6DB73641648C4EC00FF9315 /* PIGSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DB73631648C4EC00FF9315 /* PIGSettings.m */; };
@@ -36,20 +36,6 @@
 			remoteGlobalIDString = E626DE6C16476FC300D72DCC;
 			remoteInfo = CleanTask;
 		};
-		E650758B164BC6170001511C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E6507586164BC6160001511C /* CleanTaskHelper.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = E650754E164BC6160001511C;
-			remoteInfo = CleanTaskHelper;
-		};
-		E650758D164BC6170001511C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E6507586164BC6160001511C /* CleanTaskHelper.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = E650756F164BC6160001511C;
-			remoteInfo = CleanTaskHelperTests;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -59,7 +45,6 @@
 			dstPath = Contents/Library/LoginItems;
 			dstSubfolderSpec = 1;
 			files = (
-				E6507591164BC6D50001511C /* CleanTaskHelper.app in Copy Files */,
 			);
 			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -68,6 +53,8 @@
 
 /* Begin PBXFileReference section */
 		E6010FF8164A5D20005BCDCC /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
+		E615AE8B1652300300F4C101 /* PIGUUID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIGUUID.h; sourceTree = "<group>"; };
+		E615AE8C1652300300F4C101 /* PIGUUID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIGUUID.m; sourceTree = "<group>"; };
 		E6191EE01650ED5600950C37 /* icon_16x16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_16x16.png; sourceTree = "<group>"; };
 		E6191EE11650ED5600950C37 /* icon_16x16@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_16x16@2.png"; sourceTree = "<group>"; };
 		E626DE6D16476FC300D72DCC /* CleanTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,7 +77,6 @@
 		E626DE9A16476FC400D72DCC /* CleanTaskTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CleanTaskTests.h; sourceTree = "<group>"; };
 		E626DE9B16476FC400D72DCC /* CleanTaskTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CleanTaskTests.m; sourceTree = "<group>"; };
 		E626DEA516476FD300D72DCC /* CleanTask.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = CleanTask.entitlements; sourceTree = "<group>"; };
-		E6507586164BC6160001511C /* CleanTaskHelper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CleanTaskHelper.xcodeproj; path = CleanTaskHelper/CleanTaskHelper.xcodeproj; sourceTree = "<group>"; };
 		E686B539164E603800F6E935 /* PIGClassifyDesktopUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIGClassifyDesktopUtil.h; sourceTree = "<group>"; };
 		E686B53A164E603800F6E935 /* PIGClassifyDesktopUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIGClassifyDesktopUtil.m; sourceTree = "<group>"; };
 		E686B53F164E69AD00F6E935 /* FileSettings.json */ = {isa = PBXFileReference; explicitFileType = text.json; fileEncoding = 4; path = FileSettings.json; sourceTree = "<group>"; };
@@ -135,7 +121,6 @@
 		E626DE6216476FC300D72DCC = {
 			isa = PBXGroup;
 			children = (
-				E6507586164BC6160001511C /* CleanTaskHelper.xcodeproj */,
 				E6010FF8164A5D20005BCDCC /* icon.icns */,
 				E626DE7716476FC300D72DCC /* CleanTask */,
 				E626DE9416476FC400D72DCC /* CleanTaskTests */,
@@ -221,21 +206,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		E6507587164BC6160001511C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				E650758C164BC6170001511C /* CleanTaskHelper.app */,
-				E650758E164BC6170001511C /* CleanTaskHelperTests.octest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		E686B538164E600500F6E935 /* functionality */ = {
 			isa = PBXGroup;
 			children = (
 				E686B539164E603800F6E935 /* PIGClassifyDesktopUtil.h */,
 				E686B53A164E603800F6E935 /* PIGClassifyDesktopUtil.m */,
 				E686B53F164E69AD00F6E935 /* FileSettings.json */,
+				E615AE8B1652300300F4C101 /* PIGUUID.h */,
+				E615AE8C1652300300F4C101 /* PIGUUID.m */,
 			);
 			name = functionality;
 			sourceTree = "<group>";
@@ -318,12 +296,6 @@
 			mainGroup = E626DE6216476FC300D72DCC;
 			productRefGroup = E626DE6E16476FC300D72DCC /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = E6507587164BC6160001511C /* Products */;
-					ProjectRef = E6507586164BC6160001511C /* CleanTaskHelper.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				E626DE6C16476FC300D72DCC /* CleanTask */,
@@ -331,23 +303,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		E650758C164BC6170001511C /* CleanTaskHelper.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = CleanTaskHelper.app;
-			remoteRef = E650758B164BC6170001511C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		E650758E164BC6170001511C /* CleanTaskHelperTests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = CleanTaskHelperTests.octest;
-			remoteRef = E650758D164BC6170001511C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		E626DE6B16476FC300D72DCC /* Resources */ = {
@@ -400,6 +355,7 @@
 				E6DB73641648C4EC00FF9315 /* PIGSettings.m in Sources */,
 				E6EB2C88164A017500F80F70 /* PIGLaunchItemUtil.m in Sources */,
 				E686B53B164E603800F6E935 /* PIGClassifyDesktopUtil.m in Sources */,
+				E615AE8D1652300300F4C101 /* PIGUUID.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

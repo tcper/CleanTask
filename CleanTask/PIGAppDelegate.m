@@ -24,6 +24,7 @@
     packageUtil = [[PIGClassifyDesktopUtil alloc] init];
     [packageUtil initTargetDirectory:pigSettings];
     [packageUtil performPackage];
+    NSLog(@"%@", [PIGUUID UUIDString]);
     
     [self updateDirectoryButton];
     [self updatePeriodicalCheckbox];

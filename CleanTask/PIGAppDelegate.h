@@ -10,6 +10,7 @@
 #import "PIGSettings.h"
 #import "PIGClassifyDesktopUtil.h"
 #import "PIGLaunchItemUtil.h"
+#import "PIGUUID.h"
 
 @interface PIGAppDelegate : NSObject <NSApplicationDelegate> {
     NSStatusItem *appStatusItem;
