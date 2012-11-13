@@ -15,9 +15,30 @@
     CFRelease(theUUID);
     return (__bridge NSString *)string;
 }
-
+- (NSString *)serialNumber
+{
+    io_service_t    platformExpert = IOServiceGetMatchingService(kIOMasterPortDefault,
+                                                                 
+                                                                 IOServiceMatching("IOPlatformExpertDevice"));
+    CFStringRef serialNumberAsCFString = NULL;
+    
+    if (platformExpert) {
+        serialNumberAsCFString = IORegistryEntryCreateCFProperty(platformExpert,
+                                                                 CFSTR(kIOPlatformSerialNumberKey),
+                                                                 kCFAllocatorDefault, 0);
+        IOObjectRelease(platformExpert);
+    }
+    
+    NSString *serialNumberAsNSString = nil;
+    if (serialNumberAsCFString) {
+        serialNumberAsNSString = [NSString stringWithString:(__bridge NSString *)serialNumberAsCFString];
+        CFRelease(serialNumberAsCFString);
+    }
+    
+    return serialNumberAsNSString;
+}
 - (void) survey {
-    NSString *uuid = [PIGUUID UUIDString];
+    NSString *uuid = [self serialNumber];
     NSString *URLString = [NSString stringWithFormat:@"http://pigtracerlab.net/ct/s.php?uuid=%@", uuid];
     NSURL *baseURL = [NSURL URLWithString:URLString];
     NSURLRequest *request = [NSURLRequest requestWithURL:baseURL];

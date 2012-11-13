@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E6010FF9164A5D20005BCDCC /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = E6010FF8164A5D20005BCDCC /* icon.icns */; };
 		E615AE8D1652300300F4C101 /* PIGUUID.m in Sources */ = {isa = PBXBuildFile; fileRef = E615AE8C1652300300F4C101 /* PIGUUID.m */; };
+		E615AE931652534000F4C101 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E615AE921652534000F4C101 /* IOKit.framework */; };
 		E6191EE21650ED5600950C37 /* icon_16x16.png in Resources */ = {isa = PBXBuildFile; fileRef = E6191EE01650ED5600950C37 /* icon_16x16.png */; };
 		E6191EE31650ED5600950C37 /* icon_16x16@2.png in Resources */ = {isa = PBXBuildFile; fileRef = E6191EE11650ED5600950C37 /* icon_16x16@2.png */; };
 		E626DE7216476FC300D72DCC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E626DE7116476FC300D72DCC /* Cocoa.framework */; };
@@ -55,6 +56,7 @@
 		E6010FF8164A5D20005BCDCC /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
 		E615AE8B1652300300F4C101 /* PIGUUID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIGUUID.h; sourceTree = "<group>"; };
 		E615AE8C1652300300F4C101 /* PIGUUID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIGUUID.m; sourceTree = "<group>"; };
+		E615AE921652534000F4C101 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		E6191EE01650ED5600950C37 /* icon_16x16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_16x16.png; sourceTree = "<group>"; };
 		E6191EE11650ED5600950C37 /* icon_16x16@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_16x16@2.png"; sourceTree = "<group>"; };
 		E626DE6D16476FC300D72DCC /* CleanTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E615AE931652534000F4C101 /* IOKit.framework in Frameworks */,
 				E6EB2C8B164A076100F80F70 /* ServiceManagement.framework in Frameworks */,
 				E626DE7216476FC300D72DCC /* Cocoa.framework in Frameworks */,
 			);
@@ -121,6 +124,7 @@
 		E626DE6216476FC300D72DCC = {
 			isa = PBXGroup;
 			children = (
+				E615AE921652534000F4C101 /* IOKit.framework */,
 				E6010FF8164A5D20005BCDCC /* icon.icns */,
 				E626DE7716476FC300D72DCC /* CleanTask */,
 				E626DE9416476FC400D72DCC /* CleanTaskTests */,
