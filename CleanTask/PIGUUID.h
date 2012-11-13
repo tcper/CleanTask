@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PIGUUID : NSObject
+@interface PIGUUID : NSObject <NSConnectionDelegate>
 + (NSString *) UUIDString;
+- (void) survey;
 @end

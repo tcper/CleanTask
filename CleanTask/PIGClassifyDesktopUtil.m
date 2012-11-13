@@ -34,12 +34,20 @@ NSString const *DIR_CREATOR = @"loki";
 }
 
 - (void) performPackage {
-    [self checkMoveToDirectoryBeforePerform];
+    NSArray *desktopFilesList = [manager contentsOfDirectoryAtPath:desktopPath error:nil];    
+    if (![self checkDeskopFile:desktopFilesList]) {
+        return;
+    }
     
-    NSArray *desktopFilesList = [manager contentsOfDirectoryAtPath:desktopPath error:nil];
+    [self checkMoveToDirectoryBeforePerform];
+
     for (NSString *fileName in desktopFilesList) {
         [self handleSingleItem:fileName];
     }
+}
+
+- (BOOL) checkDeskopFile:(NSArray *)data {
+    return [data count] > 0;
 }
 
 - (void) checkMoveToDirectoryBeforePerform {
@@ -115,7 +123,7 @@ NSString const *DIR_CREATOR = @"loki";
     
     NSString *moveToFullPath = [[moveToDirectory stringByAppendingString:@"/"] stringByAppendingString:path];
     NSLog(@"handleSingleDir:%@", moveToFullPath);
-    //[manager moveItemAtPath:fullPath toPath:moveToFullPath error:nil];
+    [manager moveItemAtPath:fullPath toPath:moveToFullPath error:nil];
 }
 
 - (BOOL) checkDirectoryCreator:(NSString *) path {
@@ -144,9 +152,12 @@ NSString const *DIR_CREATOR = @"loki";
             if (![ext compare:fileExt]) {
                 //move file to target dir than return;
                 NSString *moveToFullPath = [moveToDirectory stringByAppendingFormat:@"/%@", typeDocName];
+                NSString *moveToFullPathFile = [moveToFullPath stringByAppendingFormat:@"/%@", file];
+
                 NSLog(@"filename:%@", fileFullPath);
                 NSLog(@"handleSingleFile:%@", moveToFullPath);
-                //[self moveFileToPath:fileFullPath moveToPath:moveToFullPath];
+
+                [self moveFileToPath:fileFullPath moveToPath:moveToFullPathFile checkPath:moveToFullPath];
                 return;
             }
         }
@@ -154,12 +165,13 @@ NSString const *DIR_CREATOR = @"loki";
     
     // mov file to other doc;
     NSString *otherFullPath = [moveToDirectory stringByAppendingFormat:@"/%@", @"Other Files"];
-    //[self moveFileToPath:fileFullPath moveToPath:otherFullPath];
+    NSString *otherFullPathFile = [[otherFullPath stringByAppendingString:@"/"] stringByAppendingString:file];
+    [self moveFileToPath:fileFullPath moveToPath:otherFullPathFile checkPath:otherFullPath];
 }
 
-- (void) moveFileToPath:(NSString *) fileFullPath moveToPath:(NSString *) moveToFullPath {
-    if (![manager fileExistsAtPath:moveToFullPath]) {
-        [manager createDirectoryAtPath:moveToFullPath withIntermediateDirectories:NO attributes:nil error:NULL];
+- (void) moveFileToPath:(NSString *) fileFullPath moveToPath:(NSString *) moveToFullPath checkPath:(NSString *) path{
+    if (![manager fileExistsAtPath:path]) {
+        [manager createDirectoryAtPath:path withIntermediateDirectories:NO attributes:nil error:NULL];
     }
     
     [manager moveItemAtPath:fileFullPath toPath:moveToFullPath error:nil];

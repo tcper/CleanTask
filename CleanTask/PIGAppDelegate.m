@@ -23,8 +23,9 @@
     pigSettings = [[PIGSettings alloc] init];
     packageUtil = [[PIGClassifyDesktopUtil alloc] init];
     [packageUtil initTargetDirectory:pigSettings];
-    [packageUtil performPackage];
-    NSLog(@"%@", [PIGUUID UUIDString]);
+    //[packageUtil performPackage];
+    PIGUUID *uuid = [[PIGUUID alloc] init];
+    [uuid survey];
     
     [self updateDirectoryButton];
     [self updatePeriodicalCheckbox];
