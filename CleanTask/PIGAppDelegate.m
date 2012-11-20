@@ -50,6 +50,12 @@
     [classifyButton setEnabled:NO];
 
     [window setReleasedWhenClosed:NO];
+    
+    [center addObserver:self selector:@selector(closeWindowExitApp:) name:NSWindowWillCloseNotification object:nil];
+}
+
+- (void) closeWindowExitApp:(NSNotification*) notification {
+    [[NSApplication sharedApplication] terminate:nil];
 }
 
 - (void) statusItemClickAction {
